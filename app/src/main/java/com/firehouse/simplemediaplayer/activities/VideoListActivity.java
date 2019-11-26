@@ -14,6 +14,7 @@ import android.content.pm.PackageManager;
 
 import android.os.Bundle;
 
+import android.util.Log;
 import android.widget.Toast;
 
 import com.firehouse.simplemediaplayer.R;
@@ -85,10 +86,15 @@ public class VideoListActivity extends AppCompatActivity {
                             ".m2ts", ".mkv", ".mov", ".mp4", ".mpg", ".mpeg",
                             ".rm", ".swf", ".vob", ".wmv"};
 
+                    String extension = listFile[i].getAbsolutePath().substring(listFile[i].getAbsolutePath().lastIndexOf("."));
 
+
+
+//                    Log.i("extension",extension);
                     for (int k = 0; k < ext.length; k++) {
-                        if (listFile[i].getName().endsWith(ext[k])) {
+                        if (extension.equalsIgnoreCase(ext[k])) {
                             fileArrayList.add(listFile[i]);
+                            Log.i("extension",ext[k]);
                             break;
                         }
                     }
