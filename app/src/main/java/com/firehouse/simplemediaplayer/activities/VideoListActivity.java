@@ -75,6 +75,9 @@ public class VideoListActivity extends AppCompatActivity {
 
     public ArrayList<File> getFile(File directory) {
         File listFile[] = directory.listFiles();
+        try {
+
+
         if (listFile != null && listFile.length > 0) {
 
             for (int i = 0; i < listFile.length; i++) {
@@ -103,7 +106,11 @@ public class VideoListActivity extends AppCompatActivity {
                 }
             }
         }
+        }catch(Exception ex){
+
+        }
         return fileArrayList;
+
     }
 
 }
